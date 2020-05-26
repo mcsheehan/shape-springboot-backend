@@ -1,18 +1,17 @@
 package net.marksheehan.shape.backend.service
 
 import net.marksheehan.shape.backend.datamodel.Square
-import net.marksheehan.shape.backend.repository.ShapeRepository
+import net.marksheehan.shape.backend.repository.NewShapeRepository
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.mongodb.core.MongoOperations
-import org.springframework.data.mongodb.core.MongoTemplate
-import org.springframework.data.mongodb.core.query.Criteria
-import org.springframework.data.mongodb.core.query.Query
 import org.springframework.stereotype.Service
 import java.util.*
 
 
 @Service
-class ShapeServiceImpl(@Autowired val shapeRepository: ShapeRepository) : ShapeService {
+class ShapeServiceImpl(@Autowired val shapeRepository: NewShapeRepository) : ShapeService {
+    fun findAll(): MutableList<Square> {
+        return shapeRepository.findAll()
+    }
 
     override fun getAllSquares(): List<Square> {
         return shapeRepository.findAll()
@@ -25,12 +24,12 @@ class ShapeServiceImpl(@Autowired val shapeRepository: ShapeRepository) : ShapeS
     override fun createSquare(shape: Square)  : CreateShapeResponse{
         val result = shapeRepository.save(shape)
 
-        val b= shapeRepository.findAllSquares()
-
-        val results = shapeRepository.isSquareIntersectingAnotherSquare(shape.topLeft.x,
-                shape.topLeft.y,
-                shape.bottomRight.x,
-                shape.bottomRight.y)
+//        val b= shapeRepository.findAllSquares()
+//
+//        val results = shapeRepository.isSquareIntersectingAnotherSquare(shape.topLeft.x,
+//                shape.topLeft.y,
+//                shape.bottomRight.x,
+//                shape.bottomRight.y)
 
 
 //        val query = Query()

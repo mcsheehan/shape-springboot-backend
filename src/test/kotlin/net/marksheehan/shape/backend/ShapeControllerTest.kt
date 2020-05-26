@@ -1,6 +1,6 @@
 package net.marksheehan.shape.backend
 
-import net.marksheehan.shape.backend.repository.ShapeRepository
+import net.marksheehan.shape.backend.repository.NewShapeRepository
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -24,7 +24,7 @@ internal class ShapeControllerTest @Autowired constructor(
     class SpringConfig {
 
         @MockBean
-        private lateinit var shapeRepository: ShapeRepository
+        private lateinit var shapeRepository: NewShapeRepository
 
 //        @Bean
 //        fun  shapeService() : ShapeService

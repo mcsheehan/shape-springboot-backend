@@ -2,7 +2,7 @@ package net.marksheehan.shape.backend.service
 
 import net.marksheehan.shape.backend.datamodel.Point
 import net.marksheehan.shape.backend.datamodel.Square
-import net.marksheehan.shape.backend.repository.ShapeRepository
+import net.marksheehan.shape.backend.repository.NewShapeRepository
 import org.junit.jupiter.api.Assertions
 
 import org.junit.jupiter.api.BeforeEach
@@ -22,7 +22,7 @@ internal class ShapeServiceImplTest @Autowired constructor(
 
 ){
     @MockBean
-    private lateinit var shapeRepository: ShapeRepository
+    private lateinit var shapeRepository: NewShapeRepository
 
     @Autowired
     private lateinit var service: ShapeService
