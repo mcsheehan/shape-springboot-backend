@@ -1,7 +1,7 @@
 package net.marksheehan.shape.backend.service
 
 import net.marksheehan.shape.backend.datamodel.Square
-import net.marksheehan.shape.backend.mongodb.ShapeRepository
+import net.marksheehan.shape.backend.repository.ShapeRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*

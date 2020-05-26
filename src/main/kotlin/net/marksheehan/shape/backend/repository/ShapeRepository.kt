@@ -1,4 +1,4 @@
-package net.marksheehan.shape.backend.mongodb
+package net.marksheehan.shape.backend.repository
 
 import net.marksheehan.shape.backend.datamodel.Square
 import org.springframework.data.mongodb.repository.MongoRepository

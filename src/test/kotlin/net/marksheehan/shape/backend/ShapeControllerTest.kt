@@ -1,8 +1,6 @@
 package net.marksheehan.shape.backend
 
-import net.marksheehan.shape.backend.mongodb.ShapeRepository
-import net.marksheehan.shape.backend.service.ShapeService
-import net.marksheehan.shape.backend.service.ShapeServiceImpl
+import net.marksheehan.shape.backend.repository.ShapeRepository
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType
 import org.springframework.test.context.junit.jupiter.SpringExtension

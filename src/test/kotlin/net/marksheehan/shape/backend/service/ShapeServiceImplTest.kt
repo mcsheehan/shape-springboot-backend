@@ -2,7 +2,7 @@ package net.marksheehan.shape.backend.service
 
 import net.marksheehan.shape.backend.datamodel.Point
 import net.marksheehan.shape.backend.datamodel.Square
-import net.marksheehan.shape.backend.mongodb.ShapeRepository
+import net.marksheehan.shape.backend.repository.ShapeRepository
 import org.junit.jupiter.api.Assertions
 
 import org.junit.jupiter.api.BeforeEach

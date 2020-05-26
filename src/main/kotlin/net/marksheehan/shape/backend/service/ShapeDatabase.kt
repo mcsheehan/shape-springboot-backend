@@ -1,7 +1,5 @@
 package net.marksheehan.shape.backend.service
 
-import net.marksheehan.shape.backend.service.IShapeDatabase
-import net.marksheehan.shape.backend.service.ShapeDatabaseCode
 import net.marksheehan.shape.backend.datamodel.Shape
 import org.springframework.stereotype.Service
 

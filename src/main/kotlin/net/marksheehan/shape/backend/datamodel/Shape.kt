@@ -1,9 +1,7 @@
 package net.marksheehan.shape.backend.datamodel
 
-import io.swagger.annotations.ApiModel
 import io.swagger.annotations.ApiModelProperty
 import org.springframework.data.annotation.Id
-import java.util.concurrent.atomic.AtomicLong
 
 enum class ShapeType {
     SQUARE,
