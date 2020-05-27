@@ -45,28 +45,38 @@ internal class ShapeControllerTest @Autowired constructor(
     }
 
     @Test
-    fun getShape() {
-//        mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-//                .andExpect(content().string(containsString("Hello,
-
-        val resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/shape")
-                .contentType(MediaType.APPLICATION_JSON))
-
-        resultActions.andExpect(jsonPath("$", Matchers.hasSize<Any>(2)))
-                .andExpect(status().isOk)
-                .andExpect(content().string(Matchers.containsString("hi")))
-                .andDo(MockMvcResultHandlers.print())
+    fun getAllShapesReturnsListOfSize0WithNoShapes() {
     }
 
     @Test
-    fun getAllShapes() {
-        val resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/shapes")
-                .contentType(MediaType.APPLICATION_JSON))
-
-        resultActions.andExpect(jsonPath("$", Matchers.hasSize<Int>(1)))
-                .andExpect(jsonPath("$[0].name", Matchers.`is`("alex.getName()")))
-                .andExpect(status().isOk)
-                .andExpect(content().string(Matchers.containsString("hi")))
-//                .andDo(MockMvcResultHandlers.print())
+    fun putShapeSavesShape() {
     }
+
+    @Test
+    fun putShapeWhenOverlappingReturnsErrorCode(){
+
+    }
+//    @Test
+//    fun getShapeReturnsWrittenShape() {
+        // Commented out, but can continue with it
+//        val resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/shape")
+//                .contentType(MediaType.APPLICATION_JSON))
+//
+//        resultActions.andExpect(jsonPath("$", Matchers.hasSize<Any>(1)))
+//                .andExpect(status().isOk)
+//                .andExpect(content().string(Matchers.containsString("hi")))
+//                .andDo(MockMvcResultHandlers.print())
+//    }
+//
+//    @Test
+//    fun writeShapeThenReturnShapeIsTheSameShape() {
+//        val resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/shapes")
+//                .contentType(MediaType.APPLICATION_JSON))
+//
+//        resultActions.andExpect(jsonPath("$", Matchers.hasSize<Int>(1)))
+//                .andExpect(jsonPath("$[0].topLeft", Matchers.`is`("")))
+//                .andExpect(status().isOk)
+//    }
+
+
 }
