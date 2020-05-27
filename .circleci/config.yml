@@ -33,3 +33,10 @@ jobs:
 
       # run tests!
       - run: ./gradlew test
+
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: build/reports
+          destination: reports
+
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: build/test-results
