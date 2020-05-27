@@ -18,9 +18,7 @@ import java.util.*
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest
-internal class ShapeServiceImplTest @Autowired constructor(
-
-){
+internal class ShapeServiceImplTest @Autowired constructor(){
     @MockBean
     private lateinit var shapeRepository: ShapeRepository
 
