@@ -8,9 +8,7 @@ made a backend entirely with kotlin before.
 These technologies have been chosen as I've never built a backend with 
 either of them and thought it would be interesting.
 
-I have to say I've enjoyed using kotlin, though have often found that I was somewhat
-in the wilderness for how to dependency inject @AutoWired components using kotlin
-especially mocked ones for unit tests, but got there in the end :D
+I have to say I've enjoyed using kotlin, though there wasn't many posts anywhere about how to dependency inject @AutoWired components using kotlin or mock them for unit tests, whilst combining with kotlins null safety and constructors, but I got there in the end :D
 
 ## Running the application
 The simplest way to run the application is to start a mongo database instance with
