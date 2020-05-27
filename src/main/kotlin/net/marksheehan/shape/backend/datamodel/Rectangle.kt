@@ -7,8 +7,9 @@ import io.swagger.annotations.ApiModelProperty
 
 @Document(collection = "square")
 @ApiModel(description = "Class representing a square shape.")
-class Square(@ApiModelProperty("The top left most point") val topLeft: Point,
-             val bottomRight: Point) : Shape(ShapeType.SQUARE) {
+class Rectangle(@ApiModelProperty("The top left most point") val topLeft: Point,
+                @ApiModelProperty("The bottom right most point") val bottomRight: Point) :
+        Shape(ShapeType.RECTANGLE) {
 
     override fun toString(): String {
         return "$uniqueId $type:  $topLeft, $bottomRight"

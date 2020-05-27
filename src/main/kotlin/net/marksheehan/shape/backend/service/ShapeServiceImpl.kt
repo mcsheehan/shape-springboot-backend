@@ -1,6 +1,6 @@
 package net.marksheehan.shape.backend.service
 
-import net.marksheehan.shape.backend.datamodel.Square
+import net.marksheehan.shape.backend.datamodel.Rectangle
 import net.marksheehan.shape.backend.repository.ShapeRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -9,15 +9,15 @@ import java.util.*
 @Service
 class ShapeServiceImpl(@Autowired val shapeRepository: ShapeRepository) : ShapeService {
 
-    override fun getAllSquares(): List<Square> {
+    override fun getAllSquares(): List<Rectangle> {
         return shapeRepository.findAll()
     }
 
-    override fun findById(uniqueId: String): Optional<Square> {
+    override fun findById(uniqueId: String): Optional<Rectangle> {
         return shapeRepository.findById(uniqueId)
     }
 
-    override fun createSquare(shape: Square)  : CreateShapeResponse{
+    override fun createSquare(shape: Rectangle)  : CreateShapeResponse{
         val result = shapeRepository.save(shape)
 
         result.uniqueId?.let {

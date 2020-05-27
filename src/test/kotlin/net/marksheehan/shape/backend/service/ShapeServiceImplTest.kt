@@ -1,7 +1,7 @@
 package net.marksheehan.shape.backend.service
 
 import net.marksheehan.shape.backend.datamodel.Point
-import net.marksheehan.shape.backend.datamodel.Square
+import net.marksheehan.shape.backend.datamodel.Rectangle
 import net.marksheehan.shape.backend.repository.ShapeRepository
 import org.junit.jupiter.api.Assertions
 
@@ -25,37 +25,37 @@ internal class ShapeServiceImplTest @Autowired constructor(){
     @Autowired
     private lateinit var service: ShapeService
 
-    lateinit var firstSquare : Square
-    lateinit var secondSquare : Square
-    lateinit var allSquares : List<Square>
+    lateinit var firstRectangle : Rectangle
+    lateinit var secondRectangle : Rectangle
+    lateinit var allRectangles : List<Rectangle>
 
     @BeforeEach
     fun setup() {
-        firstSquare = Square(Point(0.0,0.0), Point(2.0, 2.0))
-        secondSquare = Square(Point(3.0,3.0), Point(4.0, 4.0))
+        firstRectangle = Rectangle(Point(0.0,0.0), Point(2.0, 2.0))
+        secondRectangle = Rectangle(Point(3.0,3.0), Point(4.0, 4.0))
 
-        firstSquare.uniqueId = "square1"
-        secondSquare.uniqueId = "square2"
+        firstRectangle.uniqueId = "square1"
+        secondRectangle.uniqueId = "square2"
 
-        allSquares = listOf(firstSquare, secondSquare)
+        allRectangles = listOf(firstRectangle, secondRectangle)
 
-        Mockito.`when`(shapeRepository.findAll()).thenReturn(allSquares)
+        Mockito.`when`(shapeRepository.findAll()).thenReturn(allRectangles)
     }
 
     @Test
     fun ensureGetAllSquaresServiceReturnsRepositoryResult() {
 
         val result = service.getAllSquares()
-        val resultsEqual = result == allSquares
+        val resultsEqual = result == allRectangles
 
         Assertions.assertTrue(resultsEqual)
     }
 
     @Test
     fun findById() {
-        Mockito.`when`(shapeRepository.findById("square2")).thenReturn(Optional.of(secondSquare))
+        Mockito.`when`(shapeRepository.findById("square2")).thenReturn(Optional.of(secondRectangle))
 
-        val result : Optional<Square> = service.findById("square2")
+        val result : Optional<Rectangle> = service.findById("square2")
 
         Assertions.assertTrue(result.isPresent)
         Assertions.assertTrue(result.get().uniqueId == "square2")

@@ -69,3 +69,5 @@ by the docker file.
 - Integration tests using postman
 - Full containerisation (this should just be loading the produced jar into a dockerfile)
  
+I was hoping to show off by using the geospacial queries of mongodb to solve the interior exterior problem of the square
+but the provided kotlin code solving the problem should hopefully suffice.

@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModelProperty
 import org.springframework.data.annotation.Id
 
 enum class ShapeType {
-    SQUARE,
+    RECTANGLE,
     CIRCLE
 }
 

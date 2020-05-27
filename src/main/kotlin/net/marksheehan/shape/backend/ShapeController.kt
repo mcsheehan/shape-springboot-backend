@@ -1,7 +1,7 @@
 package net.marksheehan.shape.backend
 
 import net.marksheehan.shape.backend.datamodel.Shape
-import net.marksheehan.shape.backend.datamodel.Square
+import net.marksheehan.shape.backend.datamodel.Rectangle
 import net.marksheehan.shape.backend.service.CreateShapeResponse
 import net.marksheehan.shape.backend.service.ShapeService
 import org.springframework.beans.factory.annotation.Autowired
@@ -24,12 +24,12 @@ class ShapeController(@Autowired val shapeService: ShapeService) {
     }
 
     @GetMapping("/shape/{shapeId}")
-    fun getShapeById(@PathVariable shapeId: String): Optional<Square> {
+    fun getShapeById(@PathVariable shapeId: String): Optional<Rectangle> {
         return shapeService.findById(shapeId)
     }
 
     @PostMapping("/shape")
-    fun createShape(@RequestBody shape: Square): ResponseEntity<Any> {
+    fun createShape(@RequestBody shape: Rectangle): ResponseEntity<Any> {
 
         val createShapeResponse: CreateShapeResponse = shapeService.createSquare(shape)
 
