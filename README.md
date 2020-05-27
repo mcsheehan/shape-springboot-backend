@@ -10,7 +10,10 @@ either of them and thought it would be interesting.
 
 I have to say I've enjoyed using kotlin, though there wasn't many posts anywhere about how to dependency inject @AutoWired components using kotlin or mock them for unit tests, whilst combining with kotlins null safety and constructors, but I got there in the end :D
 
-## Running the application
+## Running the Rest API application
+
+Having java and docker installed is a prerequisite, `sudo apt-get install default-jdk`
+
 The simplest way to run the application is to start a mongo database instance with
 docker.
 This will bind your localhost port 27017 to this mongo docker container
