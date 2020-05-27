@@ -26,7 +26,7 @@ Alternatively open the project in intellij load gradle and run the Application.k
 this will launch the rest api.
 
 You will know this is working if you open http://localhost:8080/
-and also http://localhost:8080/swagger-ui for the auto generated documentation of the rest api.
+and also http://localhost:8080/swagger-ui.html for the auto generated documentation of the rest api.
 
 Upon launching please open:
 
