@@ -30,7 +30,7 @@ and also http://localhost:8080/swagger-ui for the auto generated documentation o
 
 Upon launching please open:
 
-http://localhost:8080/swagger-ui.html
+`http://localhost:8080/swagger-ui.html`
 
 For api documentation and a description of error 
 return codes.
@@ -47,27 +47,42 @@ best life and use docker :)
 
 ## What has been done
 The work here shows testable architecture for a backend.
-Including a repository, service and Controller layer.
 
-These layers are then mocked and some unit tests performed upon them.
+Including a repository, service and rest controller layer.
 
-A Dockerfile is produced, which will build  the backend provided a mongodb 
-instance is provided in the application.properties file.
+Continuous integration has been setup using circleci and reports on the unit tests run as 
+well as running the unit tests on each commit.
 
-The DockerFile creates the application from scratch, and the artifact can
-subsequently be launched.
+Many unit tests have been written to demonstrate a test driven development style towards
+whether the two rectangles overlap. I thought this would show off a TDD style more than a DB query.
+
+The layers are mocked and some unit tests performed upon them. To demonstrate I know
+how to use mocking libraries and test infrastructure in layers.
+
+A Dockerfile has been added, which could be used to run the jar file if the jar was
+ placed inside it from the CI.
+ 
+The CRUD operations are implemented using mongodb. This mongodb instance can be run anywhere, and the code
+is not tied to a single hard coded instance.
 
 A mongodb database has been used to store objects
 submitted by the rest api.
 
-The rest api has been containerised and is produced
-by the docker file.
+The application produces it's own documentation using swagger. Detailing the model classes used
+and the operations available on each endpoint.
+
+The create functionality returns the created shape in the header as a resource
+as is standard for rest api's
+
 
 ## Due to time constraints the following items are not complete:
-- A database query to efficiently 
+- A database query to efficiently search whether a rectangle will be placed inside another rectangle.
+- Add a feature to only allow creation of a rectangle if it is not inside another rectangle
 - More unit tests on the restapi layer
 - Integration tests using postman
 - Full containerisation (this should just be loading the produced jar into a dockerfile)
  
-I was hoping to show off by using the geospacial queries of mongodb to solve the interior exterior problem of the square
+I was hoping to show off by using the geospatial queries of mongodb to solve the interior exterior problem of the rectangle,
 but the provided kotlin code solving the problem should hopefully suffice.
+
+Postman automation testing could be used to test the rest api too

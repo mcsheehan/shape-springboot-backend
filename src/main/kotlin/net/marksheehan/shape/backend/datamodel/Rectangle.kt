@@ -5,8 +5,8 @@ import org.springframework.data.mongodb.core.mapping.Document
 import io.swagger.annotations.ApiModelProperty
 
 
-@Document(collection = "square")
-@ApiModel(description = "Class representing a square shape.")
+@Document(collection = "rectangle")
+@ApiModel(description = "Class representing a rectangle shape.")
 class Rectangle(@ApiModelProperty("The top left most point") val topLeft: Point,
                 @ApiModelProperty("The bottom right most point") val bottomRight: Point) :
         Shape(ShapeType.RECTANGLE) {

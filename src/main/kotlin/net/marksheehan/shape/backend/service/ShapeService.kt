@@ -6,7 +6,7 @@ import java.util.*
 data class CreateShapeResponse(val success : Boolean, val message : String, val id : String?)
 
 interface ShapeService {
-    fun getAllSquares(): List<Rectangle>
+    fun getAllRectangles(): List<Rectangle>
     fun findById(uniqueId : String) : Optional<Rectangle>
-    fun createSquare(shape : Rectangle) : CreateShapeResponse
+    fun createRectangle(shape : Rectangle) : CreateShapeResponse
 }

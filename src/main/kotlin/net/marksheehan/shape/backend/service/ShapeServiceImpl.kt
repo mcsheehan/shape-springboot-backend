@@ -9,7 +9,7 @@ import java.util.*
 @Service
 class ShapeServiceImpl(@Autowired val shapeRepository: ShapeRepository) : ShapeService {
 
-    override fun getAllSquares(): List<Rectangle> {
+    override fun getAllRectangles(): List<Rectangle> {
         return shapeRepository.findAll()
     }
 
@@ -17,7 +17,7 @@ class ShapeServiceImpl(@Autowired val shapeRepository: ShapeRepository) : ShapeS
         return shapeRepository.findById(uniqueId)
     }
 
-    override fun createSquare(shape: Rectangle)  : CreateShapeResponse{
+    override fun createRectangle(shape: Rectangle)  : CreateShapeResponse{
         val result = shapeRepository.save(shape)
 
         result.uniqueId?.let {

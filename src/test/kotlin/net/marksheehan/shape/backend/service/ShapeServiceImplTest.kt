@@ -34,8 +34,8 @@ internal class ShapeServiceImplTest @Autowired constructor(){
         firstRectangle = Rectangle(Point(0.0,0.0), Point(2.0, 2.0))
         secondRectangle = Rectangle(Point(3.0,3.0), Point(4.0, 4.0))
 
-        firstRectangle.uniqueId = "square1"
-        secondRectangle.uniqueId = "square2"
+        firstRectangle.uniqueId = "rectangle1"
+        secondRectangle.uniqueId = "rectangle2"
 
         allRectangles = listOf(firstRectangle, secondRectangle)
 
@@ -43,9 +43,9 @@ internal class ShapeServiceImplTest @Autowired constructor(){
     }
 
     @Test
-    fun ensureGetAllSquaresServiceReturnsRepositoryResult() {
+    fun ensureGetAllRectanglesServiceReturnsRepositoryResult() {
 
-        val result = service.getAllSquares()
+        val result = service.getAllRectangles()
         val resultsEqual = result == allRectangles
 
         Assertions.assertTrue(resultsEqual)
@@ -53,15 +53,15 @@ internal class ShapeServiceImplTest @Autowired constructor(){
 
     @Test
     fun findById() {
-        Mockito.`when`(shapeRepository.findById("square2")).thenReturn(Optional.of(secondRectangle))
+        Mockito.`when`(shapeRepository.findById("rectangle2")).thenReturn(Optional.of(secondRectangle))
 
-        val result : Optional<Rectangle> = service.findById("square2")
+        val result : Optional<Rectangle> = service.findById("rectangle2")
 
         Assertions.assertTrue(result.isPresent)
-        Assertions.assertTrue(result.get().uniqueId == "square2")
+        Assertions.assertTrue(result.get().uniqueId == "rectangle2")
     }
 
     @Test
-    fun createSquare() {
+    fun createRectangle() {
     }
 }

@@ -20,7 +20,7 @@ class ShapeController(@Autowired val shapeService: ShapeService) {
 
     @GetMapping("/shapes")
     fun getShapes(): List<Shape> {
-        return shapeService.getAllSquares()
+        return shapeService.getAllRectangles()
     }
 
     @GetMapping("/shape/{shapeId}")
@@ -31,7 +31,7 @@ class ShapeController(@Autowired val shapeService: ShapeService) {
     @PostMapping("/shape")
     fun createShape(@RequestBody shape: Rectangle): ResponseEntity<Any> {
 
-        val createShapeResponse: CreateShapeResponse = shapeService.createSquare(shape)
+        val createShapeResponse: CreateShapeResponse = shapeService.createRectangle(shape)
 
         if (!createShapeResponse.success) {
             return ResponseEntity.badRequest().body(createShapeResponse.message)

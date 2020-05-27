@@ -27,7 +27,7 @@ class SwaggerConfiguration {
     private fun getApiInfo(): ApiInfo {
         return ApiInfo(
                 "Shape API",
-                "A rest api receiving and validating square shapes to ensure there is minimal overlap",
+                "A rest api receiving and validating rectangle shapes to ensure there is minimal overlap",
                 "version 1.0",
                 "TERMS OF SERVICE URL",
                 Contact("Mark Sheehan", "www.marksheehan.net", "mark.sheehan.uk@gmail.com"),
